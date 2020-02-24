@@ -67,3 +67,34 @@
 6. 使用(Using)
 
 7. 卸载(Unloading)
+
+## 双亲委派模式(parents delegation model)以及三层类加载器
+
+一般现在的虚拟机都是使用三层类加载器和双亲委派模式来实现类加载。
+
+三层类加载器分别是
+
+1. 启动类加载器(Bootstrap Class Loader)
+
+   加载<JAVA_HOME>/lib目录下的jar包。由c++实现
+
+2. 扩展类加载器(Extension Class Loader)
+
+   加载<JAVA_HOME>/lib/ext下的jar包。
+
+3. 应用程序类加载器(Application Class Loader)
+
+   加载项目ClassPath下的类库。
+
+三层类加载的关系如下图
+
+```mermaid
+graph TD
+A[Bootstrap Class Loader]---B[Extension Class Loader]
+B---C[Application Class Loader]
+C---D[User Class Loader]
+C---E[User Class Loader]
+```
+
+双亲委派机制，就是当一个类加载器需要加载一个类的时候，首先会委托父加载器来进行加载，如果父加载器反馈无法加载的时候，才会尝试去加载。这样能保证这个别加载进来的类是唯一的。
+
