@@ -24,6 +24,6 @@ finally代码代码块无论是有有异常，都会执行
 
 ## throws关键字
 
-+ Unchecked exception必须声明
++ checked exception必须声明
 + 不允许只抛出不声明
 + 允许只声明不抛出，是为了子类重写父类，子类需要抛出更多的错误，因为子类无法抛出父类未声明的错误

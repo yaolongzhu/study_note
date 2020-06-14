@@ -7,7 +7,7 @@
   private static final Object PRESENT = new Object();//HashSet是基于HashMap来实现的，传入的值都放在map字段的key里面，value都用这个PRESENT
   ```
 
-  
+  基本上所有的操作都是借助于HashMap
 
 + 特点
 
