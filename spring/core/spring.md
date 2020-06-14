@@ -105,7 +105,7 @@
   7. DispatcherServlet把model传给对应的view
   8. view回传给客户端
 
-+ 事务
++ 事务(spring的事务都是基于AOP来实现 )
 
   + spring事务管理方式
 
@@ -122,8 +122,54 @@
 
     2. TransactionDefinition.ISOLATION_READ_UNCOMMITTED
 
-    3. 
+       读未提交
+
+    3. TransactionDefinition.ISOLATION_READ_COMMITTED
+
+       读提交
+
+    4. TransactionDefinition.ISOLATION_REPEATABLE_READ
+
+       不可重复读
+
+    5. TransactionDefinition.ISOLATION_SERIALIZABLE
+
+       串行
 
   + spring事务传播
+
+    + TransactionDefinition.PROPAGATION_REQUIRED(默认)
+
+      如果存在当前事务，就加入当前事务，否则新建一个事务
+
+    + TransactionDefinition.PROPAGATION_SUPPORTS
+
+      如果存在当前事务，就加入当前事务，否则以非事务的方式运行
+
+    + TransactionDefinition.PROPAGATION_MANDATORY
+
+      如果存在当前事务，就加入当前事务，否则抛出异常
+
+    + TransactionDefinition.PROPAGATION_REQUIRES_NEW
+
+      创建一个新的事务，如果存在当前事务就挂起当前事务
+
+    + TransactionDefinition.PROPAGATION_NOT_SUPPORT
+
+      以非事务方式运行，如果存在当前事务就挂起当前事务
+
+    + TransactionDefinition.PROPAGATION_NEVER
+
+      以非事务方式运行，如果存在当前事务就抛错
+
+    + TransactionDefinition.PROPAGATION_NESTED
+
+      如果存在当前事务，就新建一个事务嵌套的当前事务，否则新建一个事务
+
++ AOP织入方式
+
+  + 编译时织入
+  + 类加载时织入
+  + 运行时织入
 
 + 
