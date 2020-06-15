@@ -172,4 +172,28 @@
   + 类加载时织入
   + 运行时织入
 
++ 循环依赖
+
+  Prototype作用域是无法解决循环依赖问题的，只有在singleton中才能解决。
+
+  DefaultSingletonBeanRegistry中包含了三个Map来解决循环依赖的问题
+
+  + singletonObjects
+
+    单例容器，缓存创建的单例bean
+
+  + singletonFactories
+
+    映射创建bean的原始工厂
+
+  + earlySingletonObjects
+
+    映射早期的bean，这个时候的bean是不完整的，只能称为instance。
+
+  假设A，B两个类互相依赖
+
+  A依次执行doGetBean->查询缓存->createBean创建实例->把实例放到singletonFactories->调用populateBean方法装配属性。这个时候发现需要B的实例，所以也会调用A调用过的链路来创建实例。
+
+  B的实例执行到populateBean的时候发现需要A的实例，也会调用doGetBean，但是在查询缓存的阶段，能成功的在singletonFactories获得A的实例。所以B的bean能成功创建，然后放置到singletonObjects。这样A的bean也能成功创建，然后放置到singletonObjects。
+
 + 

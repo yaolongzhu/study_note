@@ -41,7 +41,7 @@
 
     kafka的其他组件能通过这个这个节点来获取到改broker的情况。
 
-  + 每个broker启动以后，都会尝试创建/controller这个临时节点，如果能创建成功，这个broker就回成为controller（正常情况只有是第一个启动的broker会创建个成功，别的都会失败，因为节点已经存在）。同时所有的broker都会监控这个节点。当监控到这个临时节点被删除，所有的都会再次尝试去创建这个节点，创建成功的broker就会成为新的controller。新的controller被选出来以后，/controller_epoch永久节点的值会+1，当一个broker接收到来自controller请求里面的epoch值小于这个节点当前的值，就意味着这是个过期的请求。
+  + 每个broker启动以后，都会尝试创建/controller这个临时节点，如果能创建成功，这个broker就会成为controller（正常情况只有是第一个启动的broker会创建个成功，别的都会失败，因为节点已经存在）。同时所有的broker都会监控这个节点。当监控到这个临时节点被删除，所有的都会再次尝试去创建这个节点，创建成功的broker就会成为新的controller。新的controller被选出来以后，/controller_epoch永久节点的值会+1，当一个broker接收到来自controller请求里面的epoch值小于这个节点当前的值，就意味着这是个过期的请求。
 
   + 当controller发现一个broker离开了集群（通过监控zk中对应的临时节点），会对在分区leader位于这个broker内的分区进行新的leader选着，这个过程结束后，会把结果发送给所有的broker。
 
@@ -59,9 +59,9 @@
 
   2. follower副本
 
-     follower副本不参与到读写请求服务当中，只会同步保存leader副本的数据。当leader副本挂了，其中一个follower副本会成为leader副本。follower副本视通过使用和消费者一样的命令(fetch命令)，来不断获取写入leader副本中的消息。
+     follower副本不参与到读写请求服务当中，只会同步保存leader副本的数据。当leader副本挂了，其中一个follower副本会成为leader副本。follower副本通过使用和消费者一样的命令(fetch命令)，来不断获取写入leader副本中的消息。
 
-  kafka会尽量的把所有的副本评价分配到各个broker当中，来保证负载均衡和可用性。
+  kafka会尽量的把所有的副本平均分配到各个broker当中，来保证负载均衡和可用性。
 
   下图中，一个topic包含了三个分区，每个分区有三个副本（1个leader，2个follower）。
 
@@ -142,7 +142,7 @@
 
   + 读取
 
-    消费者拉消息的时候，也是一批批的拉取，可以配置拉取的时间间隔已经拉取的大小。
+    消费者拉消息的时候，也是一批批的拉取，可以配置拉取的时间间隔以及拉取的大小。
 
     消费者从分区leader读取到消息，通过serializer进行序列化，消费者消费完消息以后，需要一个机制来记录已经消费消息的offset。
 
@@ -226,7 +226,7 @@ partition0-->consumer1
 
     1. 消费者组里面的消费者数量发生了变化
 
-       消费者是通过发送心跳到group coordinator这个broker来表面这个消费者还活着
+       消费者是通过发送心跳到group coordinator这个broker来表明这个消费者还活着
 
     2. 主题的分区数量发生改变
 
@@ -322,6 +322,10 @@ partition0-->consumer1
   新的broker加入到集群以后，新建的主题会分配到这个broker，但是已经创建的主题不会主动进行重新分配。
 
   可以通过kafka-reassign-partitions.sh，这个工具来进行重新分配。
+
++ 生产者异常重试
+
++ 消费者失败重试
 
 + 高吞吐原因
 
