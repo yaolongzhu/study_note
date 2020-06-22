@@ -204,27 +204,31 @@
 
   1. wait方法和sleep方法
   2. wait方法是否有参数
-  3. wait和notify的原理
-  4. 线程池启动以后，核心线程数是否能改变
-  5. 二叉搜索树
-  6. redis持久化
-  7. RDB做备份的时候，是否会阻塞
-  8. redis的RDB文件copy on write机制
-  9. Redis AOF文件的压缩
-  10. redis除了那5个基本数据结构以外，还有什么数据结构，什么场景使用
-  11. Future是否是阻塞的
-  12. 单例，DCL单例能通过反射破坏，有什么方式避免
-  13. Mysql 什么情况下会索引失效
-  14. sql调优
-  15. mysql的事务隔离级别
-  16. mysql的一致性视图是怎么实现的
-  17. 大量的join怎么做调优
-  18. spring的事务隔离级别
-  19. spring的事务是怎么实现的
-  20. spring的事务传播
-  21. A和B两个方法，都有Transactional，A调用B，事务会是怎样的，是否走了AOP
-  22. Controller和RestController两个注解能否转化
-  23. @PathVariable和@RequestBody这两个注解分别在什么时候使用
-  24. 
+  3. sleep(0)和sleep(-1)分别会是怎样
+  4. wait和notify的原理
+  5. wait和notify分别会挂起和唤醒什么线程
+  6. 线程池启动以后，核心线程数是否能改变
+  7. 二叉搜索树
+  8. redis持久化
+  9. RDB做备份的时候，是否会阻塞
+  10. redis的RDB文件copy on write机制
+  11. Redis AOF文件的压缩
+  12. redis除了那5个基本数据结构以外，还有什么数据结构，什么场景使用
+  13. Future是否是阻塞的
+  14. 单例，DCL单例能通过反射破坏，有什么方式避免
+  15. Mysql 什么情况下会索引失效
+  16. sql调优
+  17. mysql的事务隔离级别
+  18. mysql的一致性视图是怎么实现的
+  19. 大量的join怎么做调优
+  20. spring的事务隔离级别
+  21. spring的事务是怎么实现的
+  22. spring的事务传播
+  23. A和B两个方法，都有Transactional，A调用B，事务会是怎样的，是否走了AOP
+  24. Controller和RestController两个注解能否转化
+  25. @PathVariable和@RequestBody这两个注解分别在什么时候使用
+  26. lambda的原理
+  27. @Service和@Resource的区别
+  28. 
 
 + 
