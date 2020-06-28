@@ -52,7 +52,7 @@
   3. 如果存在，查看table对应的位置的key是否和要加入的key一样，一样就进行替换
   4. 如果不一样，就查看这个结点是不是已经变成树了，如果已经变成树，就调用putTreeVal往树添加这个结点
   5. 如果不是树，就证明还是链表状态，遍历遍历链表匹配key，匹配成功就进行替换，匹配失败就往链表通过尾插法进行插入，然后查看这个查看这个链表的长度是否超过TREEIFY_THRESHOLD，如果超过，就要把这个链表转化成红黑树
-  6. size+1，然后size和threshold比较，当size大于threshold就回触发扩容
+  6. size+1，然后size和threshold比较，当size大于threshold就会触发扩容
 
 + Hash公式
 

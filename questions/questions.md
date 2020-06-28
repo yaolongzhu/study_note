@@ -229,7 +229,7 @@
   25. @PathVariable和@RequestBody这两个注解分别在什么时候使用
   26. lambda的原理
   27. @Service和@Resource的区别
-  28. 
+  28. 弱引用，软引用，引用
 
 + 腾讯-刘老师回忆
 
