@@ -231,4 +231,35 @@
   27. @Service和@Resource的区别
   28. 
 
++ 腾讯-刘老师回忆
+
++ 小米-北京
+
+  1. 有没用过flink
+  2. 如果要实现个功能，输入的是中文，然后能够按照拼音搜索，怎么做
+  3. 评论里面，敏感词过滤，怎么做
+  4. 评论里面，词频统计，怎么做
+  5. mysql的count很慢是什么原因
+  6. 有什么方案能提速
+  7. mysql有什么锁
+  8. 长连接到mysql会有什么问题
+  9. mysql的update过程
+  10. mysql的行锁在什么时候获得，什么时候释放
+  11. mysql什么时候回表
+  12. redis和memory cahce比较
+  13. redis的基本数据类型
+  14. 布隆过滤器
+  15. spring启动过程，bean的生命周期
+  16. dispatcherservlet的工作原理
+  17. BeanFactory和FactoryBean的区别
+  18. 什么时候用FactoryBean
+  19. ThreadLocal的原理
+  20. AQS原理
+  21. java里面的Blocking有哪些
+  22. Java的多线程怎么映射到操作系统
+  23. 用过什么linux命令
+  24. 有没用过awk命令
+  25. LRU算法
+  26. 优先级队列怎么实现
+
 + 
