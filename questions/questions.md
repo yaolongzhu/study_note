@@ -262,4 +262,22 @@
   25. LRU算法
   26. 优先级队列怎么实现
 
++ e城e家-深圳
+
+  1. synchronized原理
+  2. lock原理
+  3. hashmap原理
+  4. mysql有什么引擎
+  5. mysql索引
+  6. dubbo服务注册和服务发现
+  7. dubbo的负载均衡
+  8. dubbo的timeout是设置在provider还是consumer
+  9. dubbo的本地缓存
+  10. dubbo的monitor
+  11. 用过什么消息队列
+  12. kafka消费者是推的还是拉的
+  13. 消息队列的ack机制
+  14. 在事务性的操作里面发送消息，如果消息发送了，但是事务失败了，要怎么处理(通过java的事件机制?)
+  15. 
+
 + 

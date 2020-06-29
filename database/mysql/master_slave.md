@@ -17,7 +17,7 @@ MySql的高可用、主备同步等，都是基于binlog。
   		worker3[worker3]
   		relay_log[relay_log]
   		relay_log-.读取.->sql_thread
-  		store_data[实际数据存]
+  		store_data[实际数据存储]
   		slave_binlog[slave binlog]
   		sql_thread-.分派.->worker1
   		sql_thread-.分派.->worker2
