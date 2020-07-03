@@ -280,4 +280,27 @@
   14. 在事务性的操作里面发送消息，如果消息发送了，但是事务失败了，要怎么处理(通过java的事件机制?)
   15. 
 
++ 小米-北京-二轮
+
+  1. 给一个数组，三数和为0
+  2. volatile原理
+  3. ThreadLocal原理，使用场景
+  4. synchronized原理
+  5. Lock原理
+  6. AQS原理
+  7. ReentrantReadWriteLock里面的唤醒是怎样的
+  8. jvm运行时数据分区
+  9. jvm堆对应的参数包括哪些，举两个例子就行
+  10. jvm调优
+  11. redis基本数据接口
+  12. redis的List底层原理
+  13. 说下kafka
+  14. consumer和consumer group详细讲下
+  15. Kafka 里replica和partition leader数据是怎样同步的
+  16. partiton leader挂了以后，怎么知道有哪些replica会参与到选主
+  17. Kafka 生产者发送消息是异步的还是同步的
+  18. mysql查询慢，会从什么方向去着手
+  19. 统计全北京人年龄的平均数和中位数
+  20. 项目中遇到最大的问题是什么，你怎么解决的
+
 + 
